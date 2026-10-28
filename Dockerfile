@@ -1,3 +1,4 @@
+
 FROM node:18-alpine
 
 WORKDIR /usr/src/app
@@ -7,10 +8,5 @@ RUN npm install
 
 COPY app/ .
 
-# Intentionally planted problem 3: Secret hardcoded
-ENV API_KEY=super-secret-key
+CMD ["npm", "start"]
 
-# Intentionally planted problem 2: Typo in variable name
-ENV LOGLEVEL=info
-
-CMD [ "npm", "start" ]
